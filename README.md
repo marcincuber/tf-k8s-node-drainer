@@ -47,6 +47,24 @@ Zip with lambda is already commited. But if you decide to generate a new zip wit
 make build-lambda-node-drainer
 ```
 
+## Autoscaling group lifecycle hook configuration example
+
+Following lifecycle transition should be used inside your ASG lifecycle hook:
+
+```
+resource "aws_autoscaling_group" "asg" {
+  name                      = "terraform-test"
+  ...
+
+  initial_lifecycle_hook {
+    name                 = "test"
+    default_result       = "CONTINUE"
+    heartbeat_timeout    = 180
+    lifecycle_transition = "autoscaling:EC2_INSTANCE_TERMINATING"
+  }
+  ...
+}
+```
 
 ## Kubernetes Permissions
 
