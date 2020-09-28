@@ -23,13 +23,13 @@ access between the Lambda function and S3 bucket.
 
 This lambda function is deployed using Terraform 0.12 which should nicely fit into your terraform templates that you use for EKS deployment.
 
-Lambda has been tested with EKS 1.12, 1.13, 1.14, 1.15, 1.16.
+Lambda has been tested with EKS 1.12, 1.13, 1.14, 1.15, 1.16, 1.17.
 
 ## Requirements
 
 * AWS CLI
 * Python 3 (tested with 3.8)
-* Terraform 0.12
+* Terraform 0.12 or 0.13
 
 ## Deploying
 
